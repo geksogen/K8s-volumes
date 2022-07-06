@@ -20,7 +20,7 @@ curl http://<NodeIP>:<Port>/read/<key>
 ```
 
 ```bash
-kubectl exec <pod name> -- ll /data/
+kubectl exec <pod name> -- ls /data/
 kubectl exec <pod name> -- cat /data/<key>
 ```
 
