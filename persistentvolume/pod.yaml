@@ -10,12 +10,12 @@ spec:
     command:
       - wget
       - "-O"
-      - "/work-dir/index.html"
+      - "/local/index.html"
       - http://info.cern.ch
     volumeMounts:
-    - name: workdir
-      mountPath: "/work-dir"
+    - name: /local
+      mountPath: "/local"
   volumes:
-    - name: workdir
+    - name: /local
       persistentVolumeClaim:
         claimName: myclaim
