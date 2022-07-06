@@ -9,5 +9,6 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 0.5Gi
+      storage: 1Gi
   storageClassName: local-path
+  volumeName: my-pv
