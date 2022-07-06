@@ -52,3 +52,4 @@ kubectl create -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/
 kubectl get pv
 ```
 
+kubectl create -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pvc.yaml
