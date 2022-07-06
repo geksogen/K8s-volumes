@@ -5,16 +5,16 @@ metadata:
   namespace: otus-volume
 spec:
   containers:
-    - name: install
-      image: busybox:1.28
-      command:
-        - wget
-        - "-O"
-        - "/work-dir/index.html"
-        - http://info.cern.ch
-      volumeMounts:
-        - name: workdir
-          mountPath: "/work-dir"
+  - name: install
+    image: busybox:1.28
+    command:
+      - wget
+      - "-O"
+      - "/work-dir/index.html"
+      - http://info.cern.ch
+    volumeMounts:
+    - name: workdir
+      mountPath: "/work-dir"
   volumes:
     - name: workdir
       persistentVolumeClaim:
