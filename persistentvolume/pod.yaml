@@ -5,15 +5,6 @@ metadata:
   namespace: otus-volume
 spec:
   containers:
-  - name: nginx
-    image: nginx
-    ports:
-    - containerPort: 80
-    volumeMounts:
-    - name: workdir
-      mountPath: /usr/share/nginx/html
-  #
-  initContainers:
     - name: install
       image: busybox:1.28
       command:
