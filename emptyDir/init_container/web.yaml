@@ -12,7 +12,7 @@ spec:
           name: app
   containers:
     - name: web
-      image: web:1.0.1
+      image: nginx
       volumeMounts:
         - mountPath: /app
           name: app

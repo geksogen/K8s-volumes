@@ -3,7 +3,7 @@
 ## emptyDir for key value API service
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/emptyDir/kvstore.yaml
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/emptyDir/key_value_API/kvstore.yaml
 ```
 
 ```bash
