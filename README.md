@@ -47,3 +47,8 @@ kubectl exec init-demo -- cat /usr/share/nginx/html/index.html
 ```bash
 kubectl create -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pv.yaml
 ```
+
+```bash
+kubectl get pv
+```
+
