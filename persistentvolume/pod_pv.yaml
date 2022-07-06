@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod_pv
+  name: pod-pv
   namespace: otus-volume
 spec:
   initContainers:
