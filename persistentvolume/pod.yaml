@@ -7,23 +7,20 @@ spec:
   initContainers:
   - name: touch-file
     image: k8s.gcr.io/busybox
-    command: [ "sh", "-c" ]
-    args:
-      - touch "/data/$(hostname).$(date)"
+    command:
+    - wget
+    - "-O"
+    - "/data/index.html"
+    - http://info.cern.ch
     volumeMounts:
     - name: data
       mountPath: /data
   containers:
   - name: node-name
     image: k8s.gcr.io/busybox
-    command: [ "sh", "-c" ]
-    args:
-    - while true; do
-        echo -en '\n';
-        date;
-        ls /local;
-        sleep 30;
-        done;
+    #command:
+    #args:
+    #  - ls
     volumeMounts:
       - name: data
         mountPath: /local
