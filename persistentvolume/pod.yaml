@@ -13,9 +13,9 @@ spec:
       - "/local/index.html"
       - http://info.cern.ch
     volumeMounts:
-    - name: /local
+    - name: local
       mountPath: "/local/"
   volumes:
-    - name: /local
+    - name: local
       persistentVolumeClaim:
         claimName: myclaim
