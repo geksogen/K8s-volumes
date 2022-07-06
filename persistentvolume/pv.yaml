@@ -9,5 +9,13 @@
       - ReadWriteOnce
     local:
       path: /local
+    nodeAffinity:
+      required:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                  - node3
     persistentVolumeReclaimPolicy: Recycle
     storageClassName: local-path
