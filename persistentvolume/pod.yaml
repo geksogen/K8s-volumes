@@ -4,27 +4,27 @@ metadata:
   name: pod
   namespace: otus-volume
 spec:
-  initContainers:
-  - name: touch-file
-    image: k8s.gcr.io/busybox
-    command:
-    - wget
-    - "-O"
-    - "/data/index.html"
-    - http://info.cern.ch
-    volumeMounts:
-    - name: data
-      mountPath: /data
   containers:
-  - name: node-name
-    image: k8s.gcr.io/busybox
-    #command:
-    #args:
-    #  - ls
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
     volumeMounts:
-      - name: data
-        mountPath: /local
+    - name: workdir
+      mountPath: /usr/share/nginx/html
+  #
+  initContainers:
+    - name: install
+      image: busybox:1.28
+      command:
+        - wget
+        - "-O"
+        - "/work-dir/index.html"
+        - http://info.cern.ch
+      volumeMounts:
+        - name: workdir
+          mountPath: "/work-dir"
   volumes:
-    - name: data
+    - name: workdir
       persistentVolumeClaim:
         claimName: myclaim
