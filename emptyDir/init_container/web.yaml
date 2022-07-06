@@ -6,7 +6,7 @@ spec:
   initContainers:
     - name: init
       image: busybox:1.31.0
-      command: ['touch test.txt']
+      command: ['touch /app/file.txt']
       volumeMounts:
         - mountPath: /app
           name: app
