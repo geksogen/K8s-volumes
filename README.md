@@ -27,7 +27,19 @@ kubectl exec <pod name> -- cat /data/<key>
 ```bash
 kubectl delete pod -l app=kvstore
 ```
-
 ## emptyDir for init container
 
+```bash
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/emptyDir/init_container/web.yaml
+```
 
+```bash
+kubectl get pod --watch
+```
+
+```bash
+kubectl exec init-demo -- ls /usr/share/nginx/html
+kubectl exec init-demo -- cat /usr/share/nginx/html/index.html
+```
+
+## persistentVolume
