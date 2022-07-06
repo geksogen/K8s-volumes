@@ -45,11 +45,11 @@ kubectl exec init-demo -- cat /usr/share/nginx/html/index.html
 ## persistentVolume
 
 ```bash
-kubectl create -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pv.yaml
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pv.yaml
 ```
 
 ```bash
 kubectl get pv
 ```
 
-kubectl create -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pvc.yaml
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pvc.yaml
