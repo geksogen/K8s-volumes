@@ -57,5 +57,5 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/p
 ```
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pvc.yaml
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pod_pv.yaml
 ```

@@ -27,9 +27,7 @@ spec:
     volumeMounts:
       - name: data
         mountPath: /local
-
-persistentVolumeClaim:
-    claimName: myclaim
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      storageClassName: local-storage
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: myclaim
