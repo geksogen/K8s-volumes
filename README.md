@@ -1,6 +1,6 @@
 # K8s-volumes
 
-## emptyDir for key value API service
+## EmptyDir for key value API service
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/emptyDir/key_value_API/kvstore.yaml
@@ -27,7 +27,7 @@ kubectl exec <pod name> -- cat /data/<key>
 ```bash
 kubectl delete pod -l app=kvstore
 ```
-## emptyDir for init container
+## EmptyDir for init container
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/emptyDir/init_container/web.yaml
@@ -42,7 +42,7 @@ kubectl exec init-demo -- ls /usr/share/nginx/html
 kubectl exec init-demo -- cat /usr/share/nginx/html/index.html
 ```
 
-## persistentVolume
+## PersistentVolume
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pv.yaml
@@ -59,3 +59,9 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/p
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pod.yaml
 ```
+
+## StatefulSet
+
+
+
+https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/
