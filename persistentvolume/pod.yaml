@@ -9,10 +9,7 @@ spec:
     image: debian
     command: ["/bin/sh", "-c"]
     args:
-      - while true; do
-          date >> /mnt/date.txt;
-          sleep 5;
-        done
+      - date >> /mnt/date.txt;
     volumeMounts:
     - name: local
       mountPath: "/mnt"
