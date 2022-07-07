@@ -7,11 +7,9 @@ spec:
   containers:
   - name: install
     image: debian
-    command:
-      - wget
-      - "-O"
-      - "/mnt/index.html"
-      - http://info.cern.ch
+    command: ["/bin/sh", "-c"]
+    args:
+      - echo "Welcome" >> /mnt/date.txt;
     volumeMounts:
     - name: local
       mountPath: "/mnt"
