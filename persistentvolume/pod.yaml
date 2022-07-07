@@ -6,12 +6,12 @@ metadata:
 spec:
   containers:
   - name: install
-    image: busybox
-    command:
-      - wget
-      - "-O"
-      - "/mnt/index.html"
-      - http://info.cern.ch
+    image: debian
+    args:
+      - while true; do
+          date >> /mnt/date.txt;
+          sleep 1;
+        done
     volumeMounts:
     - name: local
       mountPath: "/mnt"
