@@ -11,12 +11,12 @@ spec:
   - name: 1st
     image: nginx
     volumeMounts:
-    - name: html
+    - name: local
       mountPath: /usr/share/nginx/html
   - name: 2nd
     image: debian
     volumeMounts:
-    - name: html
+    - name: local
       mountPath: /local
     command: ["/bin/sh", "-c"]
     args:
