@@ -8,6 +8,7 @@
     accessModes:
       - ReadWriteOnce
     local:
+      fsType : ext4
       path: /local
     nodeAffinity:
       required:
