@@ -9,10 +9,7 @@ spec:
     image: debian
     command: ["/bin/sh", "-c"]
     args:
-      - while true; do
-          date >> /mnt/date.txt;
-          sleep 5;
-        done
+      - x=1; while  [ $x -le 5 ]; do echo "Welcome" >> /mnt/date.txt $(( x++ )); done
     volumeMounts:
     - name: local
       mountPath: "/mnt"
