@@ -4,18 +4,17 @@ metadata:
   name: pod
   namespace: otus-volume
 spec:
-  nodeName: node3
   containers:
   - name: install
     image: busybox:1.28
     command:
       - wget
       - "-O"
-      - "/local/index.html"
+      - "/mnt/index.html"
       - http://info.cern.ch
     volumeMounts:
     - name: local
-      mountPath: "/local"
+      mountPath: "/mnt"
   volumes:
     - name: local
       persistentVolumeClaim:

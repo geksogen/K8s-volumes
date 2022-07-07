@@ -8,8 +8,7 @@
     accessModes:
       - ReadWriteOnce
     local:
-      fsType : ext4
-      path: /local
+      path: /mnt
     nodeAffinity:
       required:
         nodeSelectorTerms:

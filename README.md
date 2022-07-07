@@ -56,6 +56,4 @@ kubectl get pv
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pvc.yaml
 ```
 
-```bash
-kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pod.yaml
-```
+## statefilset
