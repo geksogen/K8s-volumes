@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod
-  namespace: otus-volume
+  namespace: ya-volumes
 spec:
   containers:
   - name: install

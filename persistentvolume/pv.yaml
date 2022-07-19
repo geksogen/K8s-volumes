@@ -21,4 +21,4 @@
     storageClassName: local-path
     claimRef:
       name: myclaim
-      namespace: otus-volume
+      namespace: ya-volumes

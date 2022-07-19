@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kvstore
+  namespace: ya-volumes
 spec:
   selector:
     matchLabels:
@@ -28,6 +29,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kvstore-service
+  namespace: ya-volumes
 spec:
   type: NodePort
   ports:
