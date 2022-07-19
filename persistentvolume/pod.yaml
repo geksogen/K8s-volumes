@@ -11,7 +11,7 @@ spec:
     args:
       - while true; do
           date >> /mnt/index.txt;
-          sleep 1;
+          sleep 10;
         done
     volumeMounts:
     - name: local
