@@ -4,6 +4,7 @@ metadata:
   name: pod
   namespace: ya-volumes
 spec:
+  nodeName: node3
   containers:
   - name: install
     image: debian
