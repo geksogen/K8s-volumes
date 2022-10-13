@@ -120,7 +120,7 @@ kubectl delete sts web --cascade=false
 ```
 
 ```bash
-kubectl -n otus-volume delete pvc --all
+kubectl -n guestbook delete pvc --all
 ```
 
 
