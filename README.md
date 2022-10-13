@@ -64,65 +64,8 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/p
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pod.yaml
 ```
 
-## StatefulSet
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/statefulSet/web.yaml
-```
-
-```bash
-kubectl get ep
-```
-
 ```bash
 kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
 ```
 
-###Потыкаем statefullset
 
-####Связаность по DNS имени
-
-```bash
-kubectl run -it --image busybox:1.28 my-dns-test-pod --restart=Never --rm 
-/ # for i in 0 1 2;do nslookup web-$i.nginx;echo;echo '---';done
-```
-Делаем скрин с IP и DNS
-
-```bash
-kubectl delete pod -l app=nginx
-```
-
-```bash
-kubectl run -it --image busybox:1.28 my-dns-test-pod --restart=Never --rm 
-/ # for i in 0 1 2;do nslookup web-$i.nginx;echo;echo '---';done
-```
-
-####Scale up
-
-```bash
-kubectl scale sts web --replicas=5
-```
-
-####Scale down
-
-```bash
-kubectl scale sts web --replicas=3
-```
-
-####Deleting StatefulSets
-
-```bash
-kubectl -n guestbook delete statefulset web
-```
-
-```bash
-kubectl delete sts web --cascade=false    
-```
-
-```bash
-kubectl -n guestbook delete pvc --all
-```
-
-
-https://www.mirantis.com/blog/multi-container-pods-and-container-communication-in-kubernetes/
-https://www.bogotobogo.com/DevOps/Docker/Docker_Kubernetes_StatefulSet.php
