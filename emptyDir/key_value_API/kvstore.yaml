@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kvstore
-  namespace: ya-volumes
+  namespace: volumes
 spec:
   selector:
     matchLabels:
