@@ -7,11 +7,11 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/e
 ```
 
 ```bash
-kubectl -n volumes get pod -o wide
+kubectl get pod -o wide
 ```
 
 ```bash
-kubectl -n volumess get node -o wide
+kubectl  get node -o wide
 ```
 
 ```bash
@@ -25,7 +25,7 @@ kubectl exec <pod name> -- cat /data/<key>
 ```
 
 ```bash
-kubectl -n volumes delete pod -l app=kvstore
+kubectl delete pod -l app=kvstore
 ```
 ## EmptyDir for init container
 
@@ -38,12 +38,12 @@ kubectl get pod --watch
 ```
 
 ```bash
-kubectl -n volumes exec init-demo -- ls /usr/share/nginx/html
-kubectl -n volumes exec init-demo -- cat /usr/share/nginx/html/index.html
+kubectl exec init-demo -- ls /usr/share/nginx/html
+kubectl exec init-demo -- cat /usr/share/nginx/html/index.html
 ```
 
 ```bash
-kubectl -n volumes delete pod init-demo
+kubectl delete pod init-demo
 ```
 
 ## PersistentVolume
