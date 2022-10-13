@@ -16,8 +16,9 @@
               - key: kubernetes.io/hostname
                 operator: In
                 values:
-                  - node2
+                  - node3
     persistentVolumeReclaimPolicy: Recycle
     storageClassName: local-path
     claimRef:
       name: myclaim
+      namespace: guestbook

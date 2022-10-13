@@ -7,7 +7,7 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/e
 ```
 
 ```bash
-kubectl get pod -o wide
+kubectl -n guestbook get pod -o wide
 ```
 
 ```bash
@@ -20,12 +20,12 @@ curl http://<NodeIP>:<Port>/read/<key>
 ```
 
 ```bash
-kubectl exec <pod name> -- ls /data/
-kubectl exec <pod name> -- cat /data/<key>
+kubectl -n guestbook exec <pod name> -- ls /data/
+kubectl -n guestbook exec <pod name> -- cat /data/<key>
 ```
 
 ```bash
-kubectl delete pod -l app=kvstore
+kubectl -n guestbook delete pod -l app=kvstore
 ```
 ## EmptyDir for init container
 
@@ -34,16 +34,16 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/e
 ```
 
 ```bash
-kubectl get pod --watch
+kubectl -n guestbook get pod --watch
 ```
 
 ```bash
-kubectl exec init-demo -- ls /usr/share/nginx/html
-kubectl exec init-demo -- cat /usr/share/nginx/html/index.html
+kubectl -n guestbook exec init-demo -- ls /usr/share/nginx/html
+kubectl -n guestbook exec init-demo -- cat /usr/share/nginx/html/index.html
 ```
 
 ```bash
-kubectl delete pod init-demo
+kubectl -n guestbook delete pod init-demo
 ```
 
 ## PersistentVolume
