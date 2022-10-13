@@ -112,7 +112,7 @@ kubectl scale sts web --replicas=3
 ####Deleting StatefulSets
 
 ```bash
-kubectl delete statefulset web
+kubectl -n guestbook delete statefulset web
 ```
 
 ```bash
