@@ -21,4 +21,4 @@
     storageClassName: local-path
     claimRef:
       name: myclaim
-      namespace: guestbook
+      namespace: volumes

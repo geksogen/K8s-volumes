@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: myclaim
-  namespace: guestbook
+  namespace: volumes
 spec:
   accessModes:
     - ReadWriteOnce
