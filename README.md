@@ -63,7 +63,12 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/p
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pod.yaml
 ```
-
+Remove resource
+```bash
+kubectl -n volumes delete pod pod
+kubectl -n volumes delete pvc myclaim
+kubectl delete pv my-pv
+```
 ```bash
 kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
 ```
