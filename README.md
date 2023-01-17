@@ -69,6 +69,10 @@ kubectl -n volumes delete pod pod
 kubectl -n volumes delete pvc myclaim
 kubectl delete pv my-pv
 ```
+
+####Test NFS
+kubectl apply
+
 ```bash
 kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
 ```
