@@ -4,10 +4,15 @@ metadata:
   name: nfs-pv
 spec:
   capacity:
-    storage: 1Gi
+    storage: 2Gi
   accessModes:
     - ReadWriteMany
+  local:
+    path: /
   persistentVolumeReclaimPolicy: Retain
+  claimRef:
+    name: nfs-pvc
+    namespace: volumes
   nfs:
     path: /opt/nfs
     server: nfs-service
