@@ -74,6 +74,7 @@ kubectl delete pv my-pv
 ```bash
 kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
 kubectl patch pv my-pv -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
+kubectl -n volumes exec pod -- cat /mnt/index.txt
 ```
 
 
