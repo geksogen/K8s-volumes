@@ -23,6 +23,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: nfs-server-pod
+  namespace: volumes
   labels:
     role: nfs
 spec:
