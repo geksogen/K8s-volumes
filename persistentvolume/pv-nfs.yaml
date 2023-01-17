@@ -10,5 +10,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     path: /
-    server: nfs.f22
+    server: nfs-service
     readOnly: false
