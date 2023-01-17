@@ -4,9 +4,11 @@
     name: my-pv
   spec:
     capacity:
-      storage: 2Gi
+      storage: 1Gi
     accessModes:
       - ReadWriteMany
+    local:
+      path: /
     persistentVolumeReclaimPolicy: Retain
     storageClassName: local-path
     claimRef:
