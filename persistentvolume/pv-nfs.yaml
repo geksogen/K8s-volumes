@@ -8,6 +8,9 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
+  claimRef:
+    name: myclaim
+    namespace: volumes
   nfs:
     path: /
     server: nfs-service

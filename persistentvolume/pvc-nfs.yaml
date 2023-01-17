@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nfs-pvc
+  name: myclaim
   namespace: volumes
 spec:
   accessModes:
@@ -9,3 +9,4 @@ spec:
   resources:
      requests:
        storage: 1Gi
+  volumeName: my-pv
