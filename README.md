@@ -71,7 +71,16 @@ kubectl delete pv my-pv
 ```
 
 ####Test NFS
-kubectl apply
+```bash
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/NFS-Server/nfs-server.yaml
+kubectl -n volumes get ep
+```
+Добавляем IP в pv-nfs
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pv-nfs.yaml
+kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/persistentvolume/pvc-nfs.yaml
+```
 
 ```bash
 kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
