@@ -17,7 +17,7 @@
                 operator: In
                 values:
                   - node3
-    persistentVolumeReclaimPolicy: Delete
+    persistentVolumeReclaimPolicy: Recycle
     storageClassName: local-path
     claimRef:
       name: myclaim
