@@ -1,11 +1,13 @@
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
   name: pvcfornfs
 spec:
   accessModes:
-  - ReadWriteOnce
-  storageClassName: standard-rwo
+    - ReadWriteOnce
+  volumeMode: Filesystem
   resources:
     requests:
       storage: 1Gi
+  storageClassName: local-path
+  volumeName: my-pv
