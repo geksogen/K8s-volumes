@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: init-demo
-  namespace: guestbook
+  namespace: volumes
 spec:
   containers:
   - name: nginx

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kvstore
-  namespace: guestbook
+  namespace: volumes
 spec:
   selector:
     matchLabels:
@@ -29,7 +29,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kvstore-service
-  namespace: guestbook
+  namespace: volumes
 spec:
   type: NodePort
   ports:
