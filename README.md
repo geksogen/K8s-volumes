@@ -7,7 +7,7 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/e
 ```
 
 ```bash
-kubectl -n guestbook get pod -o wide
+kubectl -n volumes get pod -o wide
 ```
 
 ```bash
@@ -20,12 +20,14 @@ curl http://<NodeIP>:<Port>/read/<key>
 ```
 
 ```bash
-kubectl -n guestbook exec <pod name> -- ls /data/
-kubectl -n guestbook exec <pod name> -- cat /data/<key>
+kubectl -n volumes exec <pod name> -- ls /data/
+kubectl -n volumes exec <pod name> -- cat /data/<key>
 ```
 
 ```bash
-kubectl -n guestbook delete pod -l app=kvstore
+kubectl -n volumes delete pod -l app=kvstore
+kubectl -n volumes delete deployment kvstore
+kubectl -n volumes delete service kvstore-service
 ```
 ## EmptyDir for init container
 
@@ -34,16 +36,16 @@ kubectl apply -f https://raw.githubusercontent.com/geksogen/K8s-volumes/master/e
 ```
 
 ```bash
-kubectl -n guestbook get pod --watch
+kubectl -n volumes get pod --watch
 ```
 
 ```bash
-kubectl -n guestbook exec init-demo -- ls /usr/share/nginx/html
-kubectl -n guestbook exec init-demo -- cat /usr/share/nginx/html/index.html
+kubectl -n volumes exec init-demo -- ls /usr/share/nginx/html
+kubectl -n volumes exec init-demo -- cat /usr/share/nginx/html/index.html
 ```
 
 ```bash
-kubectl -n guestbook delete pod init-demo
+kubectl -n volumes delete pod init-demo
 ```
 
 ## PersistentVolume
@@ -75,6 +77,9 @@ kubectl delete pv my-pv
 kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
 kubectl patch pv my-pv -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 kubectl -n volumes exec pod -- cat /mnt/index.txt
+
 ```
+[ReadWriteOncePod](https://github.com/geksogen)
+The volume can be mounted as read-write by a single Pod. Use ReadWriteOncePod access mode if you want to ensure that only one pod across whole cluster can read that PVC or write to it. This is only supported for CSI volumes and Kubernetes version 1.22+.
 
 
