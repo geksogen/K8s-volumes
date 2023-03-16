@@ -79,7 +79,7 @@ kubectl patch pv my-pv -p '{"spec":{"persistentVolumeReclaimPolicy":"Retain"}}'
 kubectl -n volumes exec pod -- cat /mnt/index.txt
 
 ```
-[ReadWriteOncePod](https://github.com/geksogen)
+[ReadWriteOncePod](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 The volume can be mounted as read-write by a single Pod. Use ReadWriteOncePod access mode if you want to ensure that only one pod across whole cluster can read that PVC or write to it. This is only supported for CSI volumes and Kubernetes version 1.22+.
 
 
